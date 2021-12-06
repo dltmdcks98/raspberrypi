@@ -1,5 +1,6 @@
 #include "sensor.h"
 #include "motor.c"
+#include "LED.c"
 volatile float temp;
 volatile float humi;
 
@@ -24,6 +25,7 @@ int main (void)
         printf("Temp= %2.2f [C], Humi = %2.2f [%]\n", temp, humi);
         
         MotorRun(temp);
+        LEDRun(temp);
         
     }
     

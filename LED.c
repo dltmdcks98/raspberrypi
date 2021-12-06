@@ -1,39 +1,33 @@
-#include <wiringpi.h>
+#include <wiringPi.h>
 
- #define LED_PIN_1 4
- #define LED_PIN_2 17
- #define LED_PIN_3 18
- #define MAX_LED_NUM 3
+#define LED_PIN_1 11
+#define LED_PIN_2 10
+#define MAX_LED_NUM 2
 
-const int LedPinTable[3] {
-    LED_PIN_1, LED_PIN_2, LED_PIN_3,
-}
+const int LedPinTable[2] = {
+    LED_PIN_1, LED_PIN_2
+};
 
-void LEDRun(void);
-
-void LEDRun{
+void LEDRun(volatile float temp){
     int i=0;
-    if(wiringPiSetupGpio() == -1 )
-        return 1;
+
     for(i=0; i<MAX_LED_NUM; i++)
     {
         pinMode(LedPinTable[i],OUTPUT);
         digitalWrite(LedPinTable[i],LOW);
     }
     i=0;
-    if(temp<=10)
+
+    if(temp<23)
     {
-        digitalwrite(LedPinTable[0],HIGH)
-    }
-    else if(temp>10 && temp<20);
-    {
-        digitalwrite(LedPinTable[1],HIGH)
+        digitalWrite(LedPinTable[0],HIGH);
+        digitalWrite(LedPinTable[1],LOW);
     }
     else
     {
-        digitalwrite(LedPinTable[2],HIGH)
+        digitalWrite(LedPinTable[0],LOW);
+        digitalWrite(LedPinTable[1],HIGH);
+        
     }
-    return 0;
 }
 
-/////형준 임시
