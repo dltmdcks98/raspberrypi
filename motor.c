@@ -6,9 +6,10 @@
 #define LEFT_ROTATE 1
 #define RIGHT_ROTATE 2
 
+void MotorRun(void);
 void MotorStop(void);
 void MotorControl(unsigned char speed, unsigned char rotate);
-int main()
+void MotorRun()
 {
     if(wiringPiSetupGpio()==-1)
         return 1;
