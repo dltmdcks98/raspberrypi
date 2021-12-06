@@ -6,8 +6,8 @@ unsigned char sensing_type;
 
 static void I2C_data_output (void)  { pinMode(SDA, OUTPUT); }
 static void I2C_data_input (void)  { pinMode(SDA, INPUT); }
-static void I2C_sck_output (void)  { pinMode(SDK, OUTPUT); }
-static void I2C_sck_input (void)  { pinMode(SDK, INPUT); }
+static void I2C_sck_output (void)  { pinMode(SCK, OUTPUT); }
+static void I2C_sck_input (void)  { pinMode(SCK, INPUT); }
 
 static void SET_I2CDATA_PIN (void) { digitalWrite(SDA, 1); }
 static void CLR_I2CDATA_PIN (void) { digitalWrite(SDA, 0); }
