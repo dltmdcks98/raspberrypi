@@ -19,5 +19,7 @@ void Sensor{
         Transmission_start();
         humi=get_SHT11_data (HUMI);
         delay(100);
+
+        printf("Temp=%2.2f [C], Humi = %2.2f [%]\n",temp,humi);
     }
 }
