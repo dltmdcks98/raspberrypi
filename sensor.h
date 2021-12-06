@@ -29,7 +29,7 @@ void SHT11_Init  (void);
 void Connection_reset (void);
 void Transmission_start(void);
 float get_SHT11_data (unsigned char type);
-unsigned char Write_bye (unsigned char value);
+unsigned char Write_byte (unsigned char value);
 unsigned char Read_byte (unsigned char ack);
 unsigned char Measure (unsigned short +p_value, unsigned +p_checksum,
                         unsigned char mode);
