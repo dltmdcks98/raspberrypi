@@ -12,7 +12,7 @@
 #define READ_SCK() digitalRead(SCK)
 
 #define SCK     6
-#define SDA     12p
+#define SDA     12
 
 #define NOACK   0
 #define ACK     1

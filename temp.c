@@ -1,5 +1,5 @@
 #include "sensor.h"
-
+#include "motor.c"
 volatile float temp;
 volatile float humi;
 
@@ -21,7 +21,10 @@ int main (void)
         humi = get_SHT11_data (HUMI);
         delay(100);
 
-        printf("Temp=%2.2f [C], Humi = %2.2f [%]\n", temp, humi);
+        printf("Temp= %2.2f [C], Humi = %2.2f [%]\n", temp, humi);
+        
+        MotorRun(temp);
     }
+    
     return 0;
 }

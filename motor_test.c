@@ -6,27 +6,29 @@
 #define LEFT_ROTATE 1
 #define RIGHT_ROTATE 2
 
-void MotorRun(volatile float temp);
 void MotorStop(void);
 void MotorControl(unsigned char speed, unsigned char rotate);
-
-void MotorRun(volatile float temp)
+int main(void)
 {
- 
+    if(wiringPiSetupGpio()==-1)
+        return 1;
     pinMode(MOTOR_MT_N_PIN,OUTPUT);
     pinMode(MOTOR_MT_P_PIN,OUTPUT);
     softPwmCreate(MOTOR_MT_N_PIN,0,100);
     softPwmCreate(MOTOR_MT_P_PIN,0,100);
 
-    if(temp>=23)
+    while(1)
     {
         MotorControl(30,LEFT_ROTATE);
-    }
-    else
-    {
+        delay(2000);
         MotorStop();
+        delay(5000);
+        MotorControl(80,RIGHT_ROTATE);
+        delay(2000);
+        MotorStop();
+        delay(5000);
     }
-    
+    return 0;
 }
 void MotorStop()
 {
