@@ -17,8 +17,8 @@
 #define NOACK   0
 #define ACK     1
 
-#define MESURE_TEMP         0x03
-#define MESURE_HUMI         0x05
+#define MEASURE_TEMP         0x03
+#define MEASURE_HUMI         0x05
 #define READ_STATUS_REG     0x07
 #define WRITE_STATUS_REG    0x06
 #define RESET               0x1e

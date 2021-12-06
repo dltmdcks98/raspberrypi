@@ -179,7 +179,7 @@ void calc_SHT11(unsigned short humidity, unsigned short temperature)
     const float C2 =    0.0367;
     const float C3 =    -0.0000015955;
     const float T1 =    0.01;
-    const float T2 -    0.00008;
+    const float T2 =    0.00008;
 
     float rh_lin;
     float rh_true;
