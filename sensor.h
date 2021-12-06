@@ -31,7 +31,7 @@ void Transmission_start(void);
 float get_SHT11_data (unsigned char type);
 unsigned char Write_byte (unsigned char value);
 unsigned char Read_byte (unsigned char ack);
-unsigned char Measure (unsigned short +p_value, unsigned +p_checksum,
+unsigned char Measure (unsigned short *p_value, unsigned *p_checksum,
                         unsigned char mode);
 void calc_SHT11 (unsigned short p_humidity, unsigned short p_temperature);
 
