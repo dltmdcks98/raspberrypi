@@ -37,7 +37,7 @@ void Connection_reset(void)
     }
 }
 
-void Transmisson_start(void)
+void Transmission_start(void)
 {
     SET_DATA();
     CLR_SCK();
@@ -79,7 +79,7 @@ float get_SHT11_data (unsigned char type)
         if(error != 0)
             Connection_reset();
         else 
-        calc_SHT11 (SHT11_humi, SHT11_temp);
+            calc_SHT11 (SHT11_humi, SHT11_temp);
         return val_temp;
     }
     else {
@@ -95,16 +95,16 @@ unsigned char Measure (unsigned short *p_value, unsigned short *p_checksum, unsi
     switch (mode)
     {
         case TEMP :
-        error += Write_byte (MEASURE_TEMP);
-        break;
+            error += Write_byte (MEASURE_TEMP);
+            break;
         case HUMI :
-        error += Write_byte (MEASURE_HUMI);
-        break;
+            error += Write_byte (MEASURE_HUMI);
+            break;
         default :
-        break;
+            break;
     }
     if(error != 0)
-    return error;
+        return error;
 
     I2C_data_input();
 
@@ -131,7 +131,7 @@ unsigned char Write_byte(unsigned char value)
         delayMicroseconds(1);
         SET_SCK();
         delayMicroseconds(1);
-        SET_SCK();
+        CLR_SCK();
         delayMicroseconds(1);
     }
     SET_DATA();
