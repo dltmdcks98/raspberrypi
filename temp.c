@@ -24,6 +24,7 @@ int main (void)
         printf("Temp= %2.2f [C], Humi = %2.2f [%]\n", temp, humi);
         
         MotorRun(temp);
+        
     }
     
     return 0;

@@ -1,8 +1,8 @@
 #include<wiringPi.h>
 #include<softPwm.h>
 
-#define MOTOR_MT_N_PIN 12
-#define MOTOR_MT_P_PIN 6
+#define MOTOR_MT_N_PIN 17
+#define MOTOR_MT_P_PIN 27
 #define LEFT_ROTATE 1
 #define RIGHT_ROTATE 2
 
@@ -21,12 +21,12 @@ void MotorRun(volatile float temp)
     if(temp>=23)
     {
         MotorControl(30,LEFT_ROTATE);
+        printf("모터 동작");
     }
     else
     {
         MotorStop();
     }
-    
 }
 void MotorStop()
 {

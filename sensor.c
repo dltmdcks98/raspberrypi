@@ -187,7 +187,7 @@ void calc_SHT11(unsigned short humidity, unsigned short temperature)
     float rh    =   (float)humidity;
     float t     =   (float)temperature;
 
-    t_C         =   ((t * 0.01)-40.1) - 5;
+    t_C         =   ((t * 0.01)-40.1) -5;
     rh_lin      =   (C3 * rh * rh) + (C2 * rh) + C1;
     rh_true     =   (t_C - 25) * (T1 + (T2 * rh)) + rh_lin;
 
