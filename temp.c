@@ -1,4 +1,4 @@
-#include "sensor.h"
+#include "sensor.c"
 #include "motor.c"
 #include "LED.c"
 volatile float temp;
